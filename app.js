@@ -1,12 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser'); 
 const ejs = require('ejs');
 
-const tableRouter = require('./routers/table');
+const tableRouter = require('./routers/table').default;
 const rootRouter = require('./routers/root');
 
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
