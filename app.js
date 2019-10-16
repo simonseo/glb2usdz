@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 
 const tableRouter = require('./routers/table');
+const sofaRouter = require('./routers/sofa');
 const rootRouter = require('./routers/root');
 
 const app = express();
@@ -17,5 +18,6 @@ app.set('view engine', 'ejs');
 
 app.use('/', rootRouter);
 app.use('/table', tableRouter);
+app.use('/sofa', sofaRouter);
 
 app.listen(port, () => console.log(`App on ${port}!`));
