@@ -1,6 +1,6 @@
 // for uploading files to Amazon AWS S3
-import { S3 } from 'aws-sdk';
-import { NotImplementedError } from './error';
+const { S3 } = require('aws-sdk');
+const { NotImplementedError } = require('./error');
 require('dotenv').config();
 
 
@@ -44,7 +44,7 @@ const deleteFile = filePath => {
   throw NotImplementedError('deleteFile is not implemented.');
 }
 
-modules.export = {
+module.export = {
   s3Upload,
   uuid,
   deleteFile,

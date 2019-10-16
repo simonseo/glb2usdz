@@ -1,7 +1,7 @@
-import { Router } from 'express';
-import { s3Upload, deleteFile } from '../src/utils';
-import { createTable, downloadModel, gltf2usd } from '../src/model-generator';
-import { createReadStream } from 'fs';
+const { Router } = require('express');
+const { s3Upload, deleteFile } = require('../src/utils.js');
+const { createTable, downloadModel, gltf2usd } = require('../src/model-generator.js');
+const { createReadStream } = require('fs');
 
 const router = Router();
 
@@ -13,9 +13,10 @@ router.route('/')
 router.route('/output')
   .get((req, res) => {
     // res.render('table-output', { test: req });
-    res.send('heelo');
+    res.send('Invalid Approach');
   })
   .post((req, res) => {
+    res.render('table-output', { table: req.body });
     const { x, y, z } = req.body;
     const gltf = createTable(x, y, z);
     const gltfPath = downloadModel(gltf);
@@ -36,4 +37,4 @@ router.route('/output')
     // res.redirect('/table/output', req);
   });
 
-export default router;
+module.exports = router;

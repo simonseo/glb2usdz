@@ -1,5 +1,5 @@
-import { exec } from 'child_process';
-import { NotImplementedError } from "./error";
+const { exec } = require('child_process');
+const { NotImplementedError } = require("./error");
 
 const createTable = (x, y, z) => {
     // do something
@@ -21,7 +21,7 @@ const gltf2usd = gltfPath => {
     return usdzPath;
 };
 
-modules.export = {
+module.export = {
     createTable,
     downloadModel,
     gltf2usd,

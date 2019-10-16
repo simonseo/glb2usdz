@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser'); 
 const ejs = require('ejs');
 
-const tableRouter = require('./routers/table').default;
+const tableRouter = require('./routers/table');
 const rootRouter = require('./routers/root');
 
 const app = express();

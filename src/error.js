@@ -6,6 +6,6 @@ class NotImplementedError extends Error {
   }
 }
 
-export default {
+module.export = {
   NotImplementedError,
 }
